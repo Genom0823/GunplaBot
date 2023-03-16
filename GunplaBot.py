@@ -13,10 +13,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 j = open('secret.json','r')
 secret = json.load(j)
 
-DISCORD_TOKEN = secret['discordToken']
+DISCORD_TOKEN = secret["discordToken"]
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
-CHANNEL_ID = secret['channelID']
+CHANNEL_ID = int(secret["channelID"])
 
 COMMENT_LIST = ['見せてもらおうか，新しいガンプラの性能とやらを',
                 'すごい．．．親父が熱中するわけだ',
@@ -54,7 +54,6 @@ async def on_ready():
 
 @tasks.loop(seconds=60)
 async def check_new():
-
 
     date = datetime.datetime.now()
     now = datetime.datetime.now().strftime('%H:%M')

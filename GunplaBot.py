@@ -1,6 +1,7 @@
 import random
 import datetime
 import time
+import json
 
 import discord
 from discord.ext import tasks
@@ -9,12 +10,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-#time.sleep(30)
+j = open('secret.json','r')
+secret = json.load(j)
 
-DISCORD_TOKEN = 'MTA4MjU0NjY5Mzc1MDQwMzEyMg.GjPHEq.MCwjpDXr0VSvYnRVzBHWODEEr0QqPM5lk1MypY'
+DISCORD_TOKEN = secret['discordToken']
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
-CHANNEL_ID = 1085376448904310845
+CHANNEL_ID = secret['channelID']
 
 COMMENT_LIST = ['見せてもらおうか，新しいガンプラの性能とやらを',
                 'すごい．．．親父が熱中するわけだ',

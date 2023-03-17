@@ -103,7 +103,7 @@ async def check_new():
 
         # get elements
         article = driver.find_elements(By.CLASS_NAME, 'article_area')
-
+        print('Bad')
         for a in article:
 
             article_image = a.find_element(By.CLASS_NAME, 'article_photo_s')

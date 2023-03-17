@@ -12,8 +12,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import setup
 
-j = open('secret.json','r')
-secret = json.load(j)
+#j = open('secret.json','r')
+#secret = json.load(j)
 
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"

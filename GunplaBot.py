@@ -64,7 +64,7 @@ async def check_new():
     #await channel.send('test')
 
     if now: #== '09:00':
-
+        print("OK")
         # setup data
         last_top = load_info()
         is_top = True

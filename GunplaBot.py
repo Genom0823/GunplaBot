@@ -10,10 +10,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+import setup
+
 j = open('secret.json','r')
 secret = json.load(j)
 
-DISCORD_TOKEN = secret["discordToken"]
+#DISCORD_TOKEN = secret["discordToken"]
+DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
 CHANNEL_ID = int(secret["channelID"])
@@ -57,6 +60,9 @@ async def check_new():
 
     date = datetime.datetime.now()
     now = datetime.datetime.now().strftime('%H:%M')
+
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send('test')
 
     if now == '09:00':
 

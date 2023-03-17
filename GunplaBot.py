@@ -15,7 +15,6 @@ import setup
 j = open('secret.json','r')
 secret = json.load(j)
 
-#DISCORD_TOKEN = secret["discordToken"]
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
@@ -64,7 +63,7 @@ async def check_new():
     channel = client.get_channel(CHANNEL_ID)
     await channel.send('test')
 
-    if now == '09:00':
+    if now: #== '09:00':
 
         # setup data
         last_top = load_info()

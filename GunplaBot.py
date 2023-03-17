@@ -59,11 +59,12 @@ async def check_new():
 
     date = datetime.datetime.now()
     now = datetime.datetime.now().strftime('%H:%M')
+    ff = True
 
     #channel = client.get_channel(CHANNEL_ID)
     #await channel.send('test')
 
-    if now: #== '09:00':
+    if ff == True: #== '09:00':
         print("OK")
         # setup data
         last_top = load_info()
@@ -103,7 +104,7 @@ async def check_new():
 
         # get elements
         article = driver.find_elements(By.CLASS_NAME, 'article_area')
-        print('Bad')
+        
         for a in article:
 
             article_image = a.find_element(By.CLASS_NAME, 'article_photo_s')

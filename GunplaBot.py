@@ -65,7 +65,7 @@ async def check_new():
     #await channel.send('test')
 
     if ff == True: #== '09:00':
-        print("OK")
+        
         # setup data
         last_top = load_info()
         is_top = True
@@ -85,7 +85,7 @@ async def check_new():
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36')
-
+        print("OK")
         # activate the driver
         driver = webdriver.Chrome(CHROMEDRIVER, options=options)
         print('WebDriver successfully activated')

@@ -12,18 +12,15 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import setup
 
-#j = open('secret.json','r')
-#secret = json.load(j)
+database_open = open('database.json','r')
+database_load = json.load(database_open)
 
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
-CHANNEL_ID = 1085376448904310845
+CHANNEL_ID = database_load['server_info']['channelID']
 
-COMMENT_LIST = ['見せてもらおうか，新しいガンプラの性能とやらを',
-                'すごい．．．親父が熱中するわけだ',
-                'さらにできるようになったな，バンダイ！',
-                'あえて言おう！最高であると！']
+COMMENT_LIST = database_load['comment_list']
 
 #Setup
 #date = datetime.datetime.now()

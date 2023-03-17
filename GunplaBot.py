@@ -59,12 +59,11 @@ async def check_new():
 
     date = datetime.datetime.now()
     now = datetime.datetime.now().strftime('%H:%M')
-    ff = True
 
     #channel = client.get_channel(CHANNEL_ID)
     #await channel.send('test')
 
-    if ff == True: #== '09:00':
+    if now: #== '09:00':
         
         # setup data
         last_top = load_info()
@@ -72,7 +71,7 @@ async def check_new():
 
         # setup discord channel
         channel = client.get_channel(CHANNEL_ID)
-        print("1")
+        
         # setup browser options
         options = Options()
         options.add_argument('--headless')
@@ -85,7 +84,7 @@ async def check_new():
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36')
-        print("OK")
+        
         # activate the driver
         driver = webdriver.Chrome(CHROMEDRIVER, options=options)
         print('WebDriver successfully activated')

@@ -18,7 +18,7 @@ secret = json.load(j)
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
-CHANNEL_ID = int(secret["channelID"])
+CHANNEL_ID = 1085376448904310845
 
 COMMENT_LIST = ['見せてもらおうか，新しいガンプラの性能とやらを',
                 'すごい．．．親父が熱中するわけだ',

@@ -72,7 +72,7 @@ async def check_new():
 
         # setup discord channel
         channel = client.get_channel(CHANNEL_ID)
-
+        print("1")
         # setup browser options
         options = Options()
         options.add_argument('--headless')

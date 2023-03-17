@@ -60,8 +60,8 @@ async def check_new():
     date = datetime.datetime.now()
     now = datetime.datetime.now().strftime('%H:%M')
 
-    channel = client.get_channel(CHANNEL_ID)
-    await channel.send('test')
+    #channel = client.get_channel(CHANNEL_ID)
+    #await channel.send('test')
 
     if now: #== '09:00':
 

@@ -115,6 +115,7 @@ async def check_new():
                 if image_title == last_top:
                      await channel.send('今日の新着情報はありません')
                      save_info(image_title)
+                     driver.quit()
                      break
                 else:
                     save_info(image_title)

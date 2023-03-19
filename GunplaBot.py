@@ -97,9 +97,8 @@ async def check_new():
         await channel.send(str(date.month)
                            + '月'
                            + str(date.day)
-                           + '日の新作・再販情報です！')
-
-        await channel.send(random.choice(COMMENT_LIST))
+                           + '日の新作・再販情報です！\n'
+                           + random.choice(COMMENT_LIST))
 
         # get elements
         article = driver.find_elements(By.CLASS_NAME, 'article_area')
@@ -113,10 +112,14 @@ async def check_new():
             if is_top == True:
 
                 if image_title == last_top:
-                     await channel.send('今日の新着情報はありません')
-                     save_info(image_title)
-                     driver.quit()
-                     break
+                    embed = discord.Embed(title = '今日の新着情報はありません', color = 0xff0000)
+                    await channel.send(embed=embed)
+                    #await channel.send('今日の新着情報はありません')
+
+                    save_info(image_title)
+                    driver.quit()
+                    break
+                
                 else:
                     save_info(image_title)
                     is_top = False
@@ -124,16 +127,11 @@ async def check_new():
             if is_top == False:
 
                 href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
-
                 description = a.find_element(By.CLASS_NAME, 'summary')
-
                 price = a.find_element(By.CLASS_NAME, 'price')
 
                 embed = discord.Embed(title = image_title, color = 0x00ff00, description = description.text,  url = href)
-
                 embed.set_image(url=image_url)
-
-                #embed.add_field(name = "追加日", value = str(date.month) + '/' + str(date.day), inline=False)
                 embed.add_field(name = "価格", value = price.text)
                 await channel.send(embed=embed)
 

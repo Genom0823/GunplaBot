@@ -5,4 +5,4 @@ try:
     dish_1 = sys.argv[1]
 
 except:
-    print('NoCommand')
+    dish_1 = None

@@ -10,8 +10,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-import setup
-import commandline
+import cogs.setup as setup
+import cogs.commandline
 
 #j = open('secret.json','r')
 #secret = json.load(j)

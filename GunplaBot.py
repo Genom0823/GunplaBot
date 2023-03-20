@@ -113,6 +113,7 @@ async def check_new():
             if is_top == True:
 
                 if image_title == last_top:
+                    print('end')
                     embed = discord.Embed(title = '今日の新着情報はありません', color = 0xff0000)
                     await channel.send(embed=embed)
                     #await channel.send('今日の新着情報はありません')
@@ -122,10 +123,13 @@ async def check_new():
                     break
                 
                 else:
+                    print('else')
                     save_info(image_title)
                     is_top = False
 
             if is_top == False:
+
+                print('for')
 
                 href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
                 description = a.find_element(By.CLASS_NAME, 'summary')

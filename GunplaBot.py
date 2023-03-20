@@ -64,7 +64,7 @@ async def check_new():
     #channel = client.get_channel(CHANNEL_ID)
     #await channel.send('test')
 
-    if now == '09:00':
+    if now: #== '09:00':
         
         # setup data
         last_top = load_info()

@@ -1,7 +1,6 @@
 import random
 import datetime
 import time
-import json
 
 import discord
 from discord.ext import tasks
@@ -11,10 +10,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import cogs.setup as setup
-import cogs.commandline
+import cogs.commandline as com
 
-#j = open('secret.json','r')
-#secret = json.load(j)
+if com.dish_1 == '-d':
+    debugMode = True
+else:
+    debugMode = False
+
+print(debugMode)
 
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"

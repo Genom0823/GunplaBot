@@ -1,13 +1,11 @@
 import random
 import datetime
-import time
 
 import discord
 from discord.ext import tasks
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import cogs.setup as setup
 import cogs.commandline as com
@@ -16,8 +14,6 @@ if com.dish_1 == '-d':
     debugMode = True
 else:
     debugMode = False
-
-print(debugMode)
 
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"

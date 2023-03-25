@@ -129,16 +129,18 @@ async def check_new():
 
             if is_top == False:
 
-                print('for')
+                if image_title == last_top:
+                    driver.quit()
+                    break
+                else:
+                    href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
+                    description = a.find_element(By.CLASS_NAME, 'summary')
+                    price = a.find_element(By.CLASS_NAME, 'price')
 
-                href = a.find_element(By.TAG_NAME, 'a').get_attribute('href')
-                description = a.find_element(By.CLASS_NAME, 'summary')
-                price = a.find_element(By.CLASS_NAME, 'price')
-
-                embed = discord.Embed(title = image_title, color = 0x00ff00, description = description.text,  url = href)
-                embed.set_image(url=image_url)
-                embed.add_field(name = "価格", value = price.text)
-                await channel.send(embed=embed)
+                    embed = discord.Embed(title = image_title, color = 0x00ff00, description = description.text,  url = href)
+                    embed.set_image(url=image_url)
+                    embed.add_field(name = "価格", value = price.text)
+                    await channel.send(embed=embed)
 
         driver.quit()
 

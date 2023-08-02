@@ -15,6 +15,7 @@ if com.dish_1 == '-d':
 else:
     debugMode = False
 
+# test
 DISCORD_TOKEN = setup.TOKEN
 CHROMEDRIVER = "/usr/bin/chromedriver"
 URL = "https://p-bandai.jp/chara/c0010/gunpla/"
